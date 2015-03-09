@@ -17,28 +17,28 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  > InviteMe - a system to manage web app beta invitations.
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > Using InviteMe, startups and established companies can manage early access to their beta applications.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > InviteMe integrates into your new user creation workflow, collecting e-mail addresses and allowing product managers to slowly invite interested users. Using InviteMe protects fragile beta projects against a flood of users and allows you to manage who is invited to join your beta - and when.
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > A beta announcement is often accompanied by a flood of new interested users to your site. This can cause problems if the app has unforseen difficulty scaling to meet this rush.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > InviteMe lets companies capture the initial interest associated with a product announcement by letting users enter their e-mail address, requesting an invitation. Your product managers can then allow a manageable number of users to sign up and create accounts, either manually on on a regularly scheduled first-come first-served basis.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > "InviteMe is the easiest invitation management system ever." - Bradley
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > InviteMe can be integrated into any signup flow with just a few hours work from your developers.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > "We had so many people sign up for the new Apple Watch that it nearly crashed our servers! Good thing we used InviteMe to manage access." - Tim Cook, CEO, Apple
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > You can fork InviteMe from this repo today!
