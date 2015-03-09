@@ -5,7 +5,25 @@ var Pending = require('../models/pending.js');
 var requestInvite = function(req,res){
   var email = req.body.email;
   console.log(email);
-  res.send();
+  new Pending ({email: email})
+  .fetch()
+  .then(function(user){
+    //check to see if they've already requested an invitation
+    if (!user){
+      //add 'em
+      newRequest = new Pending({
+        email: email
+      });
+
+      newRequest.save().then(function(user){
+        //send confirmation from mailgun
+        res.send(201);
+      });
+    } else { //they're gettin' greedy!
+      console.log('Invitation already requested for this e-mail.');
+      res.status(409).send('Invitation already requested for this e-mail.');
+    }
+  })
 };
 
 module.exports = requestInvite;

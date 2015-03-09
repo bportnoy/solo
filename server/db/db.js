@@ -33,6 +33,9 @@ db.knex.schema.hasTable('users').then(function(exists) {
     db.knex.schema.createTable('users', function (user) {
       user.increments('id').primary();
       user.string('email', 255).unique();
+      user.string('username', 255).unique();
+      user.string('password',255);
+      user.integer('admin_level',1);
       user.string('accessToken', 255);
       user.string('refreshToken', 255);
       user.json('profile');
