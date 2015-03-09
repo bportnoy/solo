@@ -26,13 +26,13 @@
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
-  <body ng-app="soloApp">
+  <body ng-app="inviteMe">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ng-view=""></div>
+    <div ng-view></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
@@ -67,8 +67,10 @@
           <!-- injector:js -->
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
+          <script src="app/signup/signup.controller.js"></script>
           <script src="components/modal/modal.service.js"></script>
           <script src="components/navbar/navbar.controller.js"></script>
+          <script src="components/services/services.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->
 </body>

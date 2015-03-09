@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('soloApp')
+angular.module('inviteMe')
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

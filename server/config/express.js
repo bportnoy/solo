@@ -14,6 +14,8 @@ var cookieParser = require('cookie-parser');
 var errorHandler = require('errorhandler');
 var path = require('path');
 var config = require('./environment');
+var passport = require('passport');
+var db = require('../db/db.js');
 
 module.exports = function(app) {
   var env = app.get('env');

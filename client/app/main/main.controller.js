@@ -1,11 +1,7 @@
 'use strict';
 
-angular.module('soloApp')
-  .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+angular.module('inviteMe')
+  .controller('MainCtrl', ['$scope', 'RequestInvite', function ($scope, RequestInvite) {
+    RequestInvite('b@b.com');
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-    });
-
-  });
+  }]);

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('soloApp')
+angular.module('inviteMe')
   .factory('Modal', function ($rootScope, $modal) {
     /**
      * Opens a modal
