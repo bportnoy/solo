@@ -22,7 +22,6 @@ angular.module('inviteMe')
           });
         })
         .error(function(data, status, headers, config){
-          console.log($scope.alerts);
           if (status === 409){
             $scope.addAlert({
               type: 'danger',

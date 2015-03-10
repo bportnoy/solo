@@ -1,1 +1,24 @@
-admin.html
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+
+
+<div class="container" ng-controller='AdminController'>
+<table class="table table-hover">
+  <tr>
+    <th>E-mail</th>
+    <th>Date Requested</th>
+    <th>Invite</th>
+  </tr>
+  <tr ng-repeat="user in pending">
+  <td>{{user.name}}</td>
+  <td>{{user.test}}</td>
+  <td><input type="checkbox" checklist-model="inviteSelection" checklist-value="user.id"></td>
+  </tr>
+</table>
+</div>
+
+<footer class="footer">
+  <div class="container">
+      <p>InviteMe v0.0.1</p>
+  </div>
+</footer>
