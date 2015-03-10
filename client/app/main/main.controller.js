@@ -2,17 +2,15 @@
 
 angular.module('inviteMe')
   .controller('MainCtrl', ['$scope', 'RequestInvite', function ($scope, RequestInvite) {
-    $scope.alerts = [{type:'danger',msg:'hello!'}];
+    $scope.alerts = [];
 
-     $scope.addAlert = function(alert) {
-       $scope.alerts.push(alert);
-       console.log(alert);
-       console.log($scope.alerts);
-     };
+    $scope.addAlert = function(alert) {
+     $scope.alerts.push(alert);
+    };
 
-     $scope.closeAlert = function(index) {
-       $scope.alerts.splice(index, 1);
-     };
+    $scope.closeAlert = function(index) {
+      $scope.alerts.splice(index, 1);
+    };
 
     $scope.requestInvite = function(){
       RequestInvite($scope.emailInput)
@@ -24,6 +22,7 @@ angular.module('inviteMe')
           });
         })
         .error(function(data, status, headers, config){
+          console.log($scope.alerts);
           if (status === 409){
             $scope.addAlert({
               type: 'danger',
@@ -37,4 +36,5 @@ angular.module('inviteMe')
             }
         });
     };
+
   }]);

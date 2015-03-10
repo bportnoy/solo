@@ -8,9 +8,9 @@
   </div>
 </header> -->
 
-<div class="container">
+<div class="container" ng-controller='MainCtrl'>
       <h1 class="page-header">Enter your e-mail to get an invitation:</h1>
-      <form name='request' ng-submit="requestInvite()" ng-controller='MainCtrl'>
+      <form name='request' ng-submit="requestInvite()">
         <div class="input-group">
           <input type="email" class="form-control" name="email" ng-model="emailInput" placeholder="Enter your e-mail address.">
           <span class="input-group-btn">
@@ -19,8 +19,7 @@
         </div><!-- /input-group -->
       </form>
       <div>
-        <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">HELLO{{alert.msg}}</alert>
-        {{$scope.alerts}}
+        <alert ng-model='alerts' ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
       </div>
 </div>
 
