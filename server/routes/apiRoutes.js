@@ -38,11 +38,17 @@ module.exports = function(app){
   app.post('/sendinvites', function(req,res){ // DON'T FORGET TO AUTHENTICATE HERE!!!
     ids = req.body.ids;
     console.log(ids);
-    // new Pending.query(function(query){
+    Pending.forge().query(function(qb){
+      qb.where({id:0}).select().then(function(result){console.log(result);});
+    });
+    //   function(query){
     //   query.whereIn('id',ids).then(function(users){
     //     console.log(users);
     //   });
     // });
-  });
+  // }
+  // );
 
-}
+});
+
+};
