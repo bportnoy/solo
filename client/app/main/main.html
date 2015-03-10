@@ -10,14 +10,18 @@
 
 <div class="container">
       <h1 class="page-header">Enter your e-mail to get an invitation:</h1>
-      <form name='request' ng-submit="alert()">
+      <form name='request' ng-submit="requestInvite()" ng-controller='MainCtrl'>
         <div class="input-group">
-          <input type="email" class="form-control" name="email" placeholder="Enter your e-mail address.">
+          <input type="email" class="form-control" name="email" ng-model="emailInput" placeholder="Enter your e-mail address.">
           <span class="input-group-btn">
-          <button class="btn btn-default" type="button" name='submitRequest'>Join the Waitlist</button>
+          <input type='submit' class="btn btn-default" type="button" name='submitRequest' value='Join the Waitlist'>
           </span>
         </div><!-- /input-group -->
       </form>
+      <div>
+        <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">HELLO{{alert.msg}}</alert>
+        {{$scope.alerts}}
+      </div>
 </div>
 
 <footer class="footer">
