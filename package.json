@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "main": "server/app.js",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "bluebird": "^2.9.13",
     "body-parser": "~1.5.0",
     "bookshelf": "^0.7.9",
@@ -14,7 +15,7 @@
     "ejs": "~0.8.4",
     "errorhandler": "~1.0.0",
     "express": "~4.0.0",
-    "express-session": "~1.0.2",
+    "express-session": "^1.0.4",
     "knex": "^0.7.4",
     "lodash": "~2.4.1",
     "mailcomposer": "^0.2.12",
@@ -23,7 +24,8 @@
     "morgan": "~1.0.0",
     "passport": "^0.2.1",
     "serve-favicon": "~2.0.1",
-    "sqlite3": "^3.0.5"
+    "sqlite3": "^3.0.5",
+    "url": "^0.10.3"
   },
   "devDependencies": {
     "grunt": "~0.4.4",

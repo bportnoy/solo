@@ -11,6 +11,7 @@ exports.sendSignupConf = function(recipient){
     null, //servername
     {'X-Mailgun-Tag': 'Signup Confirmation'}, //options
     function(err){
+      if (!err) console.log('Confirmation sent to ' + recipient);
       console.error('Error sending with Mailgun:' + err);
     });
 
@@ -31,6 +32,7 @@ exports.sendInvitation = function(recipient, code){
     {'X-Mailgun-Tag': 'Send Invitation'}, //options
 
     function(err){
+      if (!err) console.log('Invitation sent to ' + recipient + ' w/code ' +code);
       console.error('Error sending with Mailgun:' + err);
     });
 

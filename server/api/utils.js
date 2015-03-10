@@ -12,7 +12,7 @@ var genHash = Bluebird.promisify(bcrypt.hash);
 exports.requestInvite = function(req,res){
   var email = req.body.email;
   new Pending ({email: email})
-  .fetch()
+  .fetchOne()
   .then(function(user){
     //check to see if they've already requested an invitation
     if (!user){
@@ -32,6 +32,7 @@ exports.requestInvite = function(req,res){
     }
   })
 };
+
 
 exports.inviteUser = function(id, ids, override){
   new Pending ({id: id})
@@ -54,3 +55,14 @@ exports.inviteUser = function(id, ids, override){
     }
   });
 }
+
+exports.checkToken = function(req, res, next){
+  var token = req.session.token;
+  new Pending ({token: token})
+  .fetchOne()
+  .then(function(user){
+    if (!user) res.redirect('/');
+    else next();
+  });
+};
+
