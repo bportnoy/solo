@@ -27,34 +27,22 @@ module.exports = function(app){
     })
   });
 
-  app.get('/test', function(req,res){
-    res.send('hooray');
+  app.get('/fetchpending', function(req,res){ // DON'T FORGET TO AUTHENTICATE HERE!!!
+    new Pending ({invited: false})
+    .fetchAll()
+    .then(function(users){
+      res.send(users);
+    })
+  });
+
+  app.post('/sendinvites', function(req,res){ // DON'T FORGET TO AUTHENTICATE HERE!!!
+    ids = req.body.ids;
+    console.log(ids);
+    // new Pending.query(function(query){
+    //   query.whereIn('id',ids).then(function(users){
+    //     console.log(users);
+    //   });
+    // });
   });
 
 }
-
-// module.exports = function(app){
-
-//   app.get('/join', function(req,res){
-//     console.log('/api/join');
-//     var token = req.query.token;
-
-//     new Pending ({token: token})
-//     .fetch()
-//     .then(function(user){
-//       if (!user){
-//         res.redirect('/');
-//         console.log('Invalid token.');
-//       } else {
-//         var session = req.session.regenerate(function(err){
-//           req.session.token = token;
-//           res.redirect('/signup');
-//         }); 
-//       }
-//     });
-
-//   // app.get('/soundcloud',) // check for token session
-
-//   });
-
-// };

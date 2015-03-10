@@ -10,11 +10,12 @@
     <th>Invite</th>
   </tr>
   <tr ng-repeat="user in pending">
-  <td>{{user.name}}</td>
-  <td>{{user.test}}</td>
-  <td><input type="checkbox" checklist-model="inviteSelection" checklist-value="user.id"></td>
+  <td>{{user.email}}</td>
+  <td>{{user.created_at}}</td>
+  <td><input type="checkbox" checklist-model="inviteSelection" checklist-value="user.id - 1"></td>
   </tr>
 </table>
+<button type='submit' name='submitButton' class="btn btn-primary" ng-click="sendInvites(inviteSelection)">Submit</button>
 </div>
 
 <footer class="footer">

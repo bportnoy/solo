@@ -13,6 +13,7 @@ angular.module('inviteMe.services', [])
       });
   };
 }])
+
 .factory('FetchPending', ['$http', function($http){
   return function(options){
     console.log('Fetching pending invitations.');
@@ -24,4 +25,16 @@ angular.module('inviteMe.services', [])
       console.log('Error: ' + status);
     });
   };
+}])
+
+.factory('SendInvites', ['$http', function($http){
+    return function(ids){
+      return $http.post('/api/sendinvites',{ids:ids})
+      .success(function(data,status,headers,config){
+        console.log(data);
+      })
+      .error(function(data,status,headers,config){
+        console.log('Error: ' + status);
+      });
+    };
 }]);
