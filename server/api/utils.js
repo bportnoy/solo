@@ -1,6 +1,7 @@
 var express = require('express');
 var db = require('../db/db.js');
 var Pending = require('../models/pending.js');
+var Pendings = require('../models/pendings.js');
 var mailer = require('./mailer.js');
 var Bluebird = require('bluebird');
 var bcrypt = require('bcrypt-nodejs');
@@ -11,8 +12,9 @@ var genHash = Bluebird.promisify(bcrypt.hash);
 
 exports.requestInvite = function(req,res){
   var email = req.body.email;
+  console.log(Pending);
   new Pending ({email: email})
-  .fetchOne()
+  .fetch()
   .then(function(user){
     //check to see if they've already requested an invitation
     if (!user){
@@ -36,7 +38,7 @@ exports.requestInvite = function(req,res){
 
 exports.inviteUser = function(id, ids, override){
   new Pending ({id: id})
-  .fetchOne()
+  .fetch()
   .then(function(user){
     if (!user){
       console.error('Unable to invite user with ID #' + id + ', not found.');
@@ -59,7 +61,7 @@ exports.inviteUser = function(id, ids, override){
 exports.checkToken = function(req, res, next){
   var token = req.session.token;
   new Pending ({token: token})
-  .fetchOne()
+  .fetch()
   .then(function(user){
     if (!user) res.redirect('/');
     else next();
