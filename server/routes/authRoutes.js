@@ -3,10 +3,10 @@ var Pending = require('../models/pending.js');
 module.exports = function(app){
 
   app.get('/join', function(req,res){
-    token = req.query.token;
+    var token = req.query.token;
 
     new Pending ({token: token})
-    .fetchOne()
+    .fetch()
     .then(function(user){
       if (!user){
         res.redirect('/');
@@ -16,14 +16,11 @@ module.exports = function(app){
           req.session.token = token;
           res.redirect('/signup');
         }); 
-
-
       }
     });
 
   // app.get('/soundcloud',) // check for token session
 
-    res.status(203).send(req.query.token);
   });
 
 };

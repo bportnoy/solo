@@ -6,7 +6,8 @@ angular.module('inviteMe', [
   'ngSanitize',
   'ngRoute',
   'ui.bootstrap',
-  'inviteMe.services'])
+  'inviteMe.services',
+  'inviteMe.admin'])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/signup', {
